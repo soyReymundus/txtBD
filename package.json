@@ -1,0 +1,19 @@
+{
+  "name": "dbtxt",
+  "version": "1.0.0",
+  "description": "Base de datos en español utilizando archivos de extencion txt.",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "database",
+    "db",
+    "txt",
+    "español"
+  ]
+}
