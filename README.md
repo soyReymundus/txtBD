@@ -22,7 +22,7 @@ usando el siguiente formato
 Clase principal sirve para crear o inicializar la base de datos poniendo su nombre en el constructor.
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 ```
 
 ## Propiedades
@@ -48,7 +48,7 @@ dato: Es el dato a almacenar puede ser un objeto o un array y no debe contener u
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.agregar("Matias", { "edad": 20, "apellido": "martines" }); //true porque se creo
 ```
 
@@ -63,7 +63,7 @@ dato: Nuevo dato que remplace al anterior. **object**
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.actualizar("Matias", { "edad": 22, "apellido": "martinez" }); //true porque se actualizo
 ```
 
@@ -75,7 +75,7 @@ titulo: El nombre del dato a eliminar. **string**
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.eliminar("Matias"); //lo eliminamos
 ```
 
@@ -87,7 +87,7 @@ titulo: El nombre del dato a observar.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.obtener("Matias"); //null porque lo borramos.
 ```
 
@@ -99,7 +99,7 @@ titulo: El nombre del dato a verificar. **string**
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.obtener("Matias"); //false porque lo borramos
 ```
 
@@ -109,7 +109,7 @@ Devuelve el valor del primer elemento de la base de datos.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.primero();
 ```
 
@@ -119,7 +119,7 @@ Quita los espacios inutiles en el archivo de base de datos.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.reordenar();
 ```
 
@@ -129,7 +129,7 @@ Transformas la base de dato en un array.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 var array = usuarios.toArray();
 ```
 
@@ -139,7 +139,7 @@ Transformas la base de dato en un objeto.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 var objeto = usuarios.toJson();
 ```
 
@@ -149,7 +149,7 @@ Transformas la base de dato en un objeto de tipo Map.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 var mapeado = usuarios.toMap();
 ```
 
@@ -159,7 +159,7 @@ Transformas la base de dato en un string.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 var texto = usuarios.toString();
 ```
 
@@ -169,7 +169,7 @@ Iteras todos los elementos de la base de datos.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 usuarios.forEach((valor) => { console.log(valor) });
 ```
 
@@ -179,7 +179,7 @@ Te permite filtrar dentro de elementos de la base de datos.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 var mayores = usuarios.filtrar(u => u.edad < 18);
 ```
 
@@ -189,7 +189,7 @@ Obtienes un dato completamente aleatorio.
 
 ```js
 const db = require("dbtxt");
-const usuarios = db("usuarios");
+const usuarios = new db("usuarios");
 var ganador = usuarios.random();
 ```
 

@@ -72,7 +72,7 @@ class dbtxt {
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.agregar("Matias", { "edad": 20, "apellido": "martines" });
      */
     agregar(titulo, dato) {
@@ -99,7 +99,7 @@ class dbtxt {
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.actualizar("Matias", { "edad": 22, "apellido": "martinez" });
      */
     actualizar(titulo, dato) {
@@ -123,7 +123,7 @@ class dbtxt {
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.eliminar("Matias");
      */
     eliminar(titulo) {
@@ -146,7 +146,7 @@ class dbtxt {
      * @returns {object} retorna el contenido del dato la base de datos o devuelve null si no lo encuentra.
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.obtener("Matias");
      */
     obtener(titulo) {
@@ -171,7 +171,7 @@ class dbtxt {
      * @deprecated
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.obtener("Matias");
      */
     existe(titulo) {
@@ -192,7 +192,7 @@ class dbtxt {
      * @returns {object} Devuelve el valor del primer elemento de la base de datos.
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.primero();
      */
     primero() {
@@ -212,7 +212,7 @@ class dbtxt {
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.reordenar();
      */
     reordenar() {
@@ -235,7 +235,7 @@ class dbtxt {
      * @returns {Array}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * var array = usuarios.toArray();
      */
     toArray() {
@@ -257,7 +257,7 @@ class dbtxt {
      * @returns {object}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * var objeto = usuarios.toJson();
      */
     toJson() {
@@ -280,7 +280,7 @@ class dbtxt {
      * @returns {Map}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * var mapeado = usuarios.toMap();
      */
     toMap() {
@@ -303,7 +303,7 @@ class dbtxt {
      * @returns {string}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * var texto = usuarios.toString();
      */
     toString() {
@@ -316,7 +316,7 @@ class dbtxt {
      * @param {string|Function} callback 
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * usuarios.forEach((valor) => { console.log(valor) });
      */
     forEach(callback, b, c) {
@@ -329,7 +329,7 @@ class dbtxt {
      * @returns {object}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * var mayores = usuarios.filtrar(u => u.edad < 18);
      */
     filtrar(callback, b) {
@@ -353,7 +353,7 @@ class dbtxt {
      * @returns {object}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * var ganador = usuarios.random();
      */
     random(numero) {
@@ -365,7 +365,7 @@ class dbtxt {
      * @returns {number}
      * @example
      * const db = require("dbtxt");
-     * const usuarios = db("usuarios");
+     * const usuarios = new db("usuarios");
      * console.log(usuarios.cantidad());
      */
     cantidad() {
