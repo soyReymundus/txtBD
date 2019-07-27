@@ -1,5 +1,5 @@
 {
-  "name": "dbtxt",
+  "name": "txtdb",
   "version": "1.0.0",
   "description": "Base de datos en español utilizando archivos de extencion txt.",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/toelf412/dbtxt"
   },
   "license": "MIT",
   "keywords": [

@@ -1,4 +1,4 @@
-# Bienvido a DBtxt!
+# Bienvido a txtDB!
 
 Hola!, has querido guardar información en un **.txt** sin tanto código y totalmente fácil. Usa este NPM.
 
