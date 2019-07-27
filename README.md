@@ -4,7 +4,7 @@ Hola!, has querido guardar información en un **.txt** sin tanto código y total
 
 
 <div align="center">
-<img src="https://i.imgur.com/mMCPU0g.png">
+<img src="https://i.imgur.com/3pZJ5kLh.jpg">
 </div>
 
 # Informacion
