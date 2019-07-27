@@ -1,13 +1,13 @@
 {
-  "name": "txtdb",
-  "version": "1.0.0",
+  "name": "txtbd",
+  "version": "1.0.1",
   "description": "Base de datos en español utilizando archivos de extencion txt.",
   "main": "index.js",
   "scripts": {},
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/toelf412/dbtxt"
+    "url": "https://github.com/toelf412/txtBD"
   },
   "license": "MIT",
   "keywords": [
