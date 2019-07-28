@@ -55,7 +55,7 @@ class dbtxt {
 
 
     /**
-     * No usar esta funcion por favor.
+     * No usar esta funcion por favor a menos que sepas lo que haces.
      * @deprecated
      * @param {string} dato Es el dato que se utiliza para actualizar la db.
      */
@@ -225,7 +225,7 @@ class dbtxt {
                 reorden.push(dato);
             };
         };
-        let guardado = reorden.join(" ").reverse();
+        let guardado = reorden.reverse().join(" ");
         this.guardar(guardado);
         return true;
     };
@@ -276,7 +276,7 @@ class dbtxt {
     };
 
     /**
-     * Transformas la base de dato en un objeto de tipo Map.
+     * Transformas la base de dato en un objeto de tipo Map (Map obtenido de discord.js).
      * @returns {Map}
      * @example
      * const db = require("dbtxt");

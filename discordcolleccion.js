@@ -1,9 +1,9 @@
+//Codigo perteneciente a discord.js
 "use strict";
 const util = require('util');
 
 /**
- * A Map with additional utility methods. This is used throughout discord.js rather than Arrays for anything that has
- * an ID, for significantly improved performance and ease-of-use.
+ * Codigo perteneciente a discord.js
  * @extends {Map}
  */
 class Collection extends Map {
@@ -531,3 +531,4 @@ Collection.prototype.findKey = function findKey(propOrFn, value) {
 };
 
 module.exports = Collection;
+//Codigo perteneciente a discord.js

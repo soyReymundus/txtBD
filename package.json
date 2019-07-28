@@ -1,9 +1,11 @@
 {
   "name": "txtbd",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Base de datos en español utilizando archivos de extencion txt.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node test.js"
+  },
   "dependencies": {},
   "repository": {
     "type": "git",

@@ -1,5 +1,4 @@
 "use strict";
-const util = require('util');
 class Collection extends Map {
   constructor(iterable) {
     super(iterable);

@@ -145,7 +145,7 @@ var objeto = usuarios.toJson();
 
 ### toMap();
 
-Transformas la base de dato en un objeto de tipo Map.
+Transformas la base de dato en un objeto de tipo Map. El Map es robado de discord.js aqui tienes su documentacion: https://discord.js.org/#/docs/main/stable/class/Collection
 
 ```js
 const db = require("dbtxt");
@@ -202,3 +202,5 @@ Obtienes la cantidad de datos que contiene la base de datos.
 ToelF programador y creador principal.
 
 Kamerr apoyo, dibujos e ideas.
+
+**Discord.js** Dueño de el archivo discordcolleccion.js
