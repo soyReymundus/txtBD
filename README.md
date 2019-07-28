@@ -17,11 +17,11 @@ usando el siguiente formato
 ```
 
 
-# dbtxt
+# txtbd
 
 Clase principal sirve para crear o inicializar la base de datos poniendo su nombre en el constructor.
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 ```
 
@@ -47,7 +47,7 @@ titulo: Es un nombre amistoso y permanente para tu dato. **string**
 dato: Es el dato a almacenar puede ser un objeto o un array y no debe contener un Map o si no sera eliminado. **string**
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.agregar("Matias", { "edad": 20, "apellido": "martines" }); //true porque se creo
 ```
@@ -62,7 +62,7 @@ titulo: El nombre del dato a editar. **string**
 dato: Nuevo dato que remplace al anterior. **object**
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.actualizar("Matias", { "edad": 22, "apellido": "martinez" }); //true porque se actualizo
 ```
@@ -74,7 +74,7 @@ Eliminas un dato de la base de datos.
 titulo: El nombre del dato a eliminar. **string**
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.eliminar("Matias"); //lo eliminamos
 ```
@@ -86,7 +86,7 @@ Obtienes el volor de un dato almacenado en la base de datos devuelve null si no 
 titulo: El nombre del dato a observar.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.obtener("Matias"); //null porque lo borramos.
 ```
@@ -98,7 +98,7 @@ Verificas la existencia de un valor en la base de datos
 titulo: El nombre del dato a verificar. **string**
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.obtener("Matias"); //false porque lo borramos
 ```
@@ -108,7 +108,7 @@ usuarios.obtener("Matias"); //false porque lo borramos
 Devuelve el valor del primer elemento de la base de datos.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.primero();
 ```
@@ -118,7 +118,7 @@ usuarios.primero();
 Quita los espacios inutiles en el archivo de base de datos.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.reordenar();
 ```
@@ -128,7 +128,7 @@ usuarios.reordenar();
 Transformas la base de dato en un array.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 var array = usuarios.toArray();
 ```
@@ -138,7 +138,7 @@ var array = usuarios.toArray();
 Transformas la base de dato en un objeto.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 var objeto = usuarios.toJson();
 ```
@@ -148,7 +148,7 @@ var objeto = usuarios.toJson();
 Transformas la base de dato en un objeto de tipo Map. El Map es robado de discord.js aqui tienes su documentacion: https://discord.js.org/#/docs/main/stable/class/Collection
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 var mapeado = usuarios.toMap();
 ```
@@ -158,7 +158,7 @@ var mapeado = usuarios.toMap();
 Transformas la base de dato en un string.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 var texto = usuarios.toString();
 ```
@@ -168,7 +168,7 @@ var texto = usuarios.toString();
 Iteras todos los elementos de la base de datos.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 usuarios.forEach((valor) => { console.log(valor) });
 ```
@@ -178,7 +178,7 @@ usuarios.forEach((valor) => { console.log(valor) });
 Te permite filtrar dentro de elementos de la base de datos.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 var mayores = usuarios.filtrar(u => u.edad < 18);
 ```
@@ -188,7 +188,7 @@ var mayores = usuarios.filtrar(u => u.edad < 18);
 Obtienes un dato completamente aleatorio.
 
 ```js
-const db = require("dbtxt");
+const db = require("txtbd");
 const usuarios = new db("usuarios");
 var ganador = usuarios.random();
 ```

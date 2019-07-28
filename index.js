@@ -7,16 +7,16 @@
 "use strict";
 const fs = require('fs');
 const path = require('path');
-const DBtxt = require('./error.js');
+const Errorr = require('./error.js');
 const colleccion = require("./coleccion.js");
 const discordcolleccion = require("./discordcolleccion.js");
 /**
  * Clase principal sirve para crear o inicializar la base de datos poniendo su nombre en el constructor.
  * @example
- * const db = require("dbtxt");
+ * const db = require("txtbd");
  * const usuarios = db("usuarios");
  */
-class dbtxt {
+class txtbd {
     /** 
      * Aqui se inicializan las propiedades necesarias para el funcionamiento de la base de datos.
      * @constructor
@@ -24,9 +24,9 @@ class dbtxt {
     */
     constructor(nombredb = "txt") {
         if (!nombredb) {
-            throw new DBtxt("Ingresa un valor como nombre");
+            throw new Errorr("Ingresa un valor como nombre");
         } else if (typeof nombredb != "string") {
-            throw new DBtxt("Ingresa un valor de tipo string como nombre");
+            throw new Errorr("Ingresa un valor de tipo string como nombre");
         } else {
             /**
              * Esta propiedad es igual al valor ingresado en el constructor con la extencion .txt agregada.
@@ -47,7 +47,7 @@ class dbtxt {
                     return true;
                 }
                 catch (error) {
-                    throw new DBtxt(` = Ocurrio un problema al crear los datos de ${nombredb} - el erro ${error}`);
+                    throw new Errorr(` = Ocurrio un problema al crear los datos de ${nombredb} - el erro ${error}`);
                 };
             })();
         };
@@ -56,7 +56,6 @@ class dbtxt {
 
     /**
      * No usar esta funcion por favor a menos que sepas lo que haces.
-     * @deprecated
      * @param {string} dato Es el dato que se utiliza para actualizar la db.
      */
     guardar(dato) {
@@ -71,7 +70,7 @@ class dbtxt {
      * @param {object} dato Es el dato a almacenar puede ser un objeto o un array y no debe contener un Map o si no sera eliminado.
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.agregar("Matias", { "edad": 20, "apellido": "martines" });
      */
@@ -84,7 +83,7 @@ class dbtxt {
             let dato = divicion[x];
             let tituloDato = dato.replace(/\[.*\]/, "").slice(1, -1);
             if (titulo == tituloDato) {
-                throw new DBtxt(` = La base de datos ya tiene almacenado ese dato.`);
+                throw new Errorr(` = La base de datos ya tiene almacenado ese dato.`);
             } else { };
         };
         this.guardar(guardado);
@@ -98,7 +97,7 @@ class dbtxt {
      * @param {Object} dato Nuevo dato que remplace al anterior.
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.actualizar("Matias", { "edad": 22, "apellido": "martinez" });
      */
@@ -114,7 +113,7 @@ class dbtxt {
                 return true;
             };
         };
-        throw new DBtxt(` = La base de datos no tiene almacenado ese dato.`);
+        throw new Errorr(` = La base de datos no tiene almacenado ese dato.`);
     };
 
     /**
@@ -122,7 +121,7 @@ class dbtxt {
      * @param {string} titulo El nombre del dato a eliminar.
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.eliminar("Matias");
      */
@@ -137,7 +136,7 @@ class dbtxt {
                 return true;
             };
         };
-        throw new DBtxt(` = La base de datos no tiene almacenado ese dato.`);
+        throw new Errorr(` = La base de datos no tiene almacenado ese dato.`);
     };
 
     /**
@@ -145,7 +144,7 @@ class dbtxt {
      * @param {string} titulo El nombre del dato a observar.
      * @returns {object} retorna el contenido del dato la base de datos o devuelve null si no lo encuentra.
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.obtener("Matias");
      */
@@ -170,7 +169,7 @@ class dbtxt {
      * @returns {boolean} retorna true si el valor existe o retorna false si no existe.
      * @deprecated
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.obtener("Matias");
      */
@@ -191,7 +190,7 @@ class dbtxt {
      * Devuelve el valor del primer elemento de la base de datos.
      * @returns {object} Devuelve el valor del primer elemento de la base de datos.
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.primero();
      */
@@ -211,7 +210,7 @@ class dbtxt {
      * Quita los espacios inutiles en el archivo de base de datos.
      * @returns {boolean} Devuelve true si todo salio bien o devuelve una excepcion si algo sale mal.
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.reordenar();
      */
@@ -234,7 +233,7 @@ class dbtxt {
      * Transformas la base de dato en un array.
      * @returns {Array}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * var array = usuarios.toArray();
      */
@@ -256,7 +255,7 @@ class dbtxt {
      * Transformas la base de dato en un objeto.
      * @returns {object}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * var objeto = usuarios.toJson();
      */
@@ -279,7 +278,7 @@ class dbtxt {
      * Transformas la base de dato en un objeto de tipo Map (Map obtenido de discord.js).
      * @returns {Map}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * var mapeado = usuarios.toMap();
      */
@@ -302,7 +301,7 @@ class dbtxt {
      * Transformas la base de dato en un string.
      * @returns {string}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * var texto = usuarios.toString();
      */
@@ -315,7 +314,7 @@ class dbtxt {
      * Iteras todos los elementos de la base de datos.
      * @param {string|Function} callback 
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * usuarios.forEach((valor) => { console.log(valor) });
      */
@@ -328,7 +327,7 @@ class dbtxt {
      * @param {string|Function} callback
      * @returns {object}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * var mayores = usuarios.filtrar(u => u.edad < 18);
      */
@@ -352,7 +351,7 @@ class dbtxt {
      * @param {number} numero 
      * @returns {object}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * var ganador = usuarios.random();
      */
@@ -364,7 +363,7 @@ class dbtxt {
      * Obtienes la cantidad de datos que contiene la base de datos.
      * @returns {number}
      * @example
-     * const db = require("dbtxt");
+     * const db = require("txtbd");
      * const usuarios = new db("usuarios");
      * console.log(usuarios.cantidad());
      */
@@ -372,4 +371,4 @@ class dbtxt {
         return this.toArray().length;
     };
 };
-module.exports = dbtxt;
+module.exports = txtbd;
